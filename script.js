@@ -145,9 +145,24 @@ fn = {
             }, 1200);
         });
     },
+    checkLogin: function () {
+        $.post(fn.base+"checkLogin")
+            .done(function (response) {
+                if(response == 'loggedIn'){
+                    fn.recomendations();
+                    $('.area').show();
+                    $('.loginLink').hide();
+                }
+                else{
+                    $('.area').hide();
+                    $('.loginLink').show();
+                }
+            })
+    },
 
     execute: function () {
-        fn.recomendations();
+        fn.checkLogin();
+        //fn.recomendations();
         //fn.myJobs();
         fn.menuSlide();
         fn.menuAccess();
