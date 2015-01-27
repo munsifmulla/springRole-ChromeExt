@@ -1,0 +1,17 @@
+{
+    "name": "SpringRole Extension",
+    "version":"1.0",
+    "manifest_version": 2,
+    "description": "Making your first Google Chrome extension.",
+    "browser_action": {
+        "default_popup": "index.html"
+    },
+    "icons": {
+    "128": "logo.png"
+    },
+    "content_scripts": [ {
+        "js": [ "jquery.js", "script.js" ],
+        "matches": [ "http://*/*", "https://*/*"]
+    }]
+
+}
